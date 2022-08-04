@@ -165,7 +165,7 @@ func setJfrogHome() (string, error) {
 }
 
 func startArtifactory(binDir string) error {
-	log.Println("Starting Artifactory...")
+	log.Println("Starting the Artifactory service...")
 	var cmd *exec.Cmd
 	if isWindows() {
 		cmd = exec.Command(filepath.Join(binDir, "InstallService.bat"))
