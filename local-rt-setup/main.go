@@ -5,7 +5,6 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/mholt/archiver/v3"
 	"io"
 	"io/ioutil"
 	"log"
@@ -18,6 +17,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/mholt/archiver/v3"
 )
 
 const maxConnectionWaitSeconds = 300
@@ -110,6 +111,7 @@ func setupLocalArtifactory() (err error) {
 		binDir = filepath.Join(jfrogHome, "artifactory", "app", "bin")
 	}
 	err = startArtifactory(binDir)
+	fmt.Println("error" + err.Error())
 	if err != nil {
 		return err
 	}
