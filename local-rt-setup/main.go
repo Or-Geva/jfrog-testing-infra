@@ -172,8 +172,9 @@ func startArtifactory(binDir string) error {
 	} else {
 		cmd = exec.Command(filepath.Join(binDir, "artifactoryctl"), "start")
 	}
-	cmd.Stderr = os.Stderr
-	cmd.Stdout = os.Stderr
+	// cmd.Stderr = os.Stderr
+	// cmd.Stdout = os.Stderr
+	fmt.Println("Run: " + strings.Join(cmd.Args, " "))
 	return cmd.Run()
 }
 
